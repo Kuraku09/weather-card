@@ -31,7 +31,6 @@ body {
     background-size: cover;
     /* 使用 cover 而不是 100% 100% */
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
     z-index: -1;
     /* 確保背景在其他內容之後 */
 }
@@ -202,7 +201,7 @@ button:hover:before {
     margin-left: 30px;
     margin-bottom: 10px;
     width: 300px;
-    height: 200px;
+    height: auto;
     border-radius: 5%;
     box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.5);
     color: #E6E6E6;
@@ -281,6 +280,7 @@ button:hover:before {
 /* 地圖 */
 .container {
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); /* For Safari */
     position: absolute;
     left: 50%;
     top: 10%;
