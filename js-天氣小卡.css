@@ -74,6 +74,7 @@ body {
 #weather-logo {
     max-width: 100px;
     max-height: 100px;
+    src: url(./test.html);
 }
 
 @media (max-width:376px) {
