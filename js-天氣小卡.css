@@ -31,7 +31,7 @@ body {
     background-size: cover;
     /* 使用 cover 而不是 100% 100% */
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     z-index: -1;
     /* 確保背景在其他內容之後 */
 }
@@ -72,8 +72,6 @@ body {
 }
 
 #weather-logo {
-    width: 100px;
-    height: 100px;
     background-image: url(./img/天氣預報logo.png);
     max-width: 100px;
     max-height: 100px;
