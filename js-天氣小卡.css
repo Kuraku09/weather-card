@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "ChenYuluoyan-Thin";
+    src: url("./font/ChenYuluoyan-Thin.ttf") format("truetype");
+}
+
+body {
+    font-family: "ChenYuluoyan-Thin";
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    /* background-color: black; */
+    position: relative;
+    overflow: visible;
+}
+
+#background-img {
+    position: fixed;
+    /* 改為 fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/adam-jang-TH9uIIVSqxY-unsplash.jpg);
+    background-size: cover;
+    /* 使用 cover 而不是 100% 100% */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    /* 確保背景在其他內容之後 */
+}
+
+@media (max-width:700px) {
+    #background-img {
+        background-image: url(./img/su-san-lee-AY2yqfnaEnk-unsplash.jpg);
+    }
+}
+
+#nav {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    position: fixed;
+    display: flex;
+    background: linear-gradient(to right, rgb(255, 246, 192), rgba(0, 0, 255, 0.548));
+    z-index: 1;
+}
+
+@media (max-width:1320px) {
+    #nav {
+        height: 25%;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:700px) {
+    #nav {
+        height: 30%;
+    }
+}
+
+@media (max-width:376px) {
+    #nav {
+        height: 35%;
+    }
+}
+
+#weather-logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+@media (max-width:376px) {
+    #weather-logo {
+        max-width: 70px;
+        max-height: 70px;
+    }
+}
+
+#information {
+    display: flex;
+}
+
+@media (max-width:700px) {
+    #information {
+        flex-wrap: wrap;
+    }
+}
+
+#logo-name {
+    line-height: 80px;
+    font-size: 45px;
+    margin-right: 60px;
+}
+
+@media (max-width:700px) {
+    #logo-name {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+/* @media (max-width:600px) {
+    #logo-name {
+        line-height: 50px;
+    }
+} */
+
+#buttons {
+    left: 40%;
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #eee23e;
+}
+
+button {
+    position: relative;
+    min-width: 100px;
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+button span {
+    color: #FFFFFF;
+    mix-blend-mode: difference;
+    font-size: 30px;
+    font-family: "ChenYuluoyan-Thin";
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 100%;
+    border-radius: 50px;
+    background: black;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+button:hover:before {
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.548), rgb(228, 97, 97));
+    width: 100%;
+}
+
+#content {
+    /* background-image: url(./img/wolfgang-hasselmann-d9U59bKjBb0-unsplash.jpg); */
+    /* background-size: 50% 100%;
+    background-repeat: no-repeat; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: start;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    margin-top: 170px;
+}
+
+@media (max-width:1320px) {
+    #content {
+        margin-top: 300px;
+    }
+}
+
+@media (max-width:600px) {
+    #content {
+        width: 100%;
+        justify-content: center;
+        margin-top: 740px;
+    }
+}
+
+.weather-card {
+    /* background-color: #FFFFF0; */
+    backdrop-filter: blur(50px);
+    padding: 5px 10px 0 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 200px;
+    border-radius: 5%;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.5);
+    color: #E6E6E6;
+}
+
+@media (max-width:1320px) {
+    .weather-card {
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 250px;
+    }
+}
+
+@media (max-width:600px) {
+    .weather-card {
+        margin-top: 0;
+        margin-left: 0;
+        width: 350px;
+    }
+}
+
+@media (max-width:550px) {
+    .weather-card {
+        margin-left: 0;
+        width: 350px;
+    }
+}
+
+.city-name {
+    font-size: 45px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.timing-all {
+    display: flex;
+    align-items: center;
+}
+
+.timing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.temperature-all {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.degree {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+}
+
+
+.test {
+    display: flex;
+    justify-content: center;
+}
+
+.under-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MinT {
+    opacity: 0.6;
+}
+
+/* 地圖 */
+.container {
+    backdrop-filter: blur(2px);
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:600px) {
+    .container {
+        /* display: none; */
+        position: absolute;
+        left: 10%;
+        top: 150px;
+        width: 90%;
+        height: 60%;
+    }
+}
+
+@media (max-width:376px) {
+    .container {
+        top: 200px;
+    }
+}
+
+.block {
+    width: 600px;
+    height: 600px;
+}
+
+@media (max-width:600px) {
+    .block {
+        height: 300px;
+    }
+}
+
+a path {
+    transition: all 0.2s;
+}
+
+a:hover path {
+    fill: #4085cf;
+    transform: translate(-5px, -5px);
+}
+
+a.active path {
+    fill: #4085cf;
+    transform: translate(-5px, -5px);
+}
+
+.st0 {
+    fill: #E6E6E6;
+}
+
+/* 時鐘 */
+.clock-container {
+    display: flex;
+    align-items: center;
+    font-family: 'clockicons';
+}
+
+
+@media (max-width:600px) {
+    .clock-container {
+        align-items: start;
+    }
+}
+
+
+.date {
+    display: block;
+    font-size: 25px;
+    font-family: "ChenYuluoyan-Thin";
+}
+
+.clock {
+    /* background-color: black; */
+    font-size: 45px;
+    font-family: "ChenYuluoyan-Thin";
+}
+
+@media (max-width:800px) {
+    .clock {
+        font-size: 40px;
+    }
+}
+
